@@ -132,5 +132,12 @@ public class AppTest extends TestData {
 		System.out.println(ResultText);
 		boolean ActualResult = ResultText.contains("found") || ResultText.contains("مكان");
 		Assert.assertEquals(ActualResult, ExpectedFinshingSearchHotel);
+		
+		/* or
+		 * Get and print the readyState
+		 * String pageState = (String) js.executeScript("return document.readyState");
+		 * System.out.println(pageState);
+		 * assertEquals(pageState, "complete");
+		*/
 	}
 }
