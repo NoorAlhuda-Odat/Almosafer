@@ -17,114 +17,118 @@ public class AppTest extends TestData {
 
 	@BeforeTest
 	public void mySetup() throws InterruptedException {
-		driver.get(URL);
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
-
-		Thread.sleep(1000); 	
-		driver.findElement(By.cssSelector(".cta__button.cta__saudi")).click();
-	
+		Setup();
 	}
 	
-	@Test(priority = 1, enabled = false)
+	@Test(priority = 1)
 	public void ChekTheDefultLanguages () {
 	
 		String ActualLanguage= driver.findElement(By.tagName("html")).getDomAttribute("lang");
         Assert.assertEquals(ActualLanguage, ExpectLanguage, "Language should be EN by default.");
-        System .out.print(ActualLanguage);
+  
 	}
 	
-	@Test(priority = 2, enabled = false )
+	@Test(priority = 2 )
 	public void  ChekTheCurrency() {
-		
-		WebElement Currency =driver.findElement(By.cssSelector(".sc-hUfwpO.kAhsZG"));
-        String ActualCurrency = Currency.getText();
+	
+		String ActualCurrency =driver.findElement(By.cssSelector(".sc-hUfwpO.kAhsZG")).getText();
         Assert.assertEquals(ActualCurrency, ExpectCurrency, "Currency should be SAR.");
-        System .out.print(ActualCurrency);
+        
 	}
 	
-	@Test(priority = 3, enabled = false)
+	@Test(priority = 3)
 	public void  ChekTheContactNumber() {
 		
-		WebElement Body = driver.findElement(By.tagName("body"));
-		WebElement ContactNumber =Body.findElement(By.linkText("+966554400000"));
-		String ActualContactNumber = ContactNumber.getText();
+		String ActualContactNumber =driver.findElement(By.linkText("+966554400000")).getText();
 		Assert.assertEquals(ActualContactNumber, ExpectContactNumber, "Saudi contact number (" + ExpectContactNumber + ") should be visible on the page.");
-		System .out.print(ActualContactNumber);
+	
 	}
 	
-	@Test(priority = 4, enabled = false)
+	@Test(priority = 4)
 	public void checkQitafLogoIsDisplayed() throws InterruptedException {
 		
 	    WebElement Footer = driver.findElement(By.tagName("footer"));
-	    WebElement QitafLogo = Footer.findElement(By.xpath(".//*[name()='svg']"));  
+	    WebElement QitafLogo = Footer.findElement(By.cssSelector(".sc-ekulBa.iOOTo")).findElement(By.tagName("svg"));
 	    boolean ActualResultForThelogo = QitafLogo.isDisplayed();
-		Assert.assertEquals(ActualResultForThelogo, ExpectedResultsForTheLogo);	
-		System.out.println("Qitaf Logo is displayed successfully.");
+		Assert.assertEquals(ActualResultForThelogo, ExpectedResultsForTheLogo,"Qitaf Logo is displayed successfully.");	
+	
 	}
 	
-	@Test(priority = 5, enabled = false)
+	@Test(priority = 5)
 	public void verifyHotelsTabIsNotSelected() {
 		
 	    WebElement HotelsTab = driver.findElement(By.id("uncontrolled-tab-example-tab-hotels"));
-	    String ActualValue = HotelsTab.getDomAttribute("aria-selected");
-	    Assert.assertEquals(ActualValue, ExpectedValue, "Hotels tab should NOT be selected by default.");
+	    String ActualValueForHotelTab = HotelsTab.getDomAttribute("aria-selected");
+	    Assert.assertEquals(ActualValueForHotelTab, ExpectedValueForHotelTab, "Hotels tab should NOT be selected by default.");
 	    
 	}
 	
-	@Test(priority = 6, enabled = false)
+	@Test(priority = 6)
 	public void verifyDefaultDepartureDate() {
-	    WebElement DepartureDate = driver.findElement(By.xpath("//div[@data-testid='FlightSearchBox__FromDateButton']"));
-	    String ActualDepartureDay = DepartureDate.getText().replaceAll("\\s+", " ").trim();
-	    Assert.assertEquals(ActualDepartureDay, ExpectedDepartureDate, "Departure date should be Today +1 day.");
+		
+		List<WebElement> Dates = driver.findElements(By.cssSelector(".sc-dXfzlN.iPVuSG"));
+		String ActualDepatureDate = Dates.get(0).getText();
+		Assert.assertEquals(ActualDepatureDate, ExpectedDepatureDate);
+		
 	}
 
-	@Test(priority = 7, enabled = false)
+	@Test(priority = 7)
 	public void verifyDefaultReturnDate() {
-	    WebElement ReturnDate = driver.findElement(By.xpath("//div[@data-testid='FlightSearchBox__ToDateButton']"));
-	    String ActualReturnDay = ReturnDate.getText().replaceAll("\\s+", " ").trim();
-	    Assert.assertEquals(ActualReturnDay, ExpectedReturnDate, "Return date should be Today +2 days.");
+		
+		List<WebElement> Dates = driver.findElements(By.cssSelector(".sc-dXfzlN.iPVuSG"));
+		String ActualReturnDate = Dates.get(1).getText();
+		Assert.assertEquals(ActualReturnDate, ExpectedReturnDate);
+		
 	}
 	
-	@Test(priority = 8, enabled = false)
+	@Test(priority = 8)
 	public void RandomlyChangeTheLanguage() {
 		
-		String[] URLs = { "https://www.almosafer.com/en", "https://www.almosafer.com/ar", };
-		int RandomIndex = rand.nextInt(URLs.length);
 		driver.get(URLs[RandomIndex]);
+		
+	      if (driver.getCurrentUrl().contains("en")) {
+			  String ActualLanaguge = driver.findElement(By.tagName("html")).getDomAttribute("lang");
+			  Assert.assertEquals(ActualLanaguge, ExpectedLanaguageEn);
+	        } 
+		  else {
+			    String ActualLanaguge = driver.findElement(By.tagName("html")).getDomAttribute("lang");
+				Assert.assertEquals(ActualLanaguge, ExpectedLanaguageAr);
+	        } 
+		
 	}
 
-	@Test(priority = 9, enabled = false)
+	@Test(priority = 9)
 	public void clickCities() throws InterruptedException {
 		
 		 StaysButton();
 	 
 		WebElement locationInput = driver.findElement(By.xpath("//input[@data-testid='AutoCompleteInput']"));
-		String lang = driver.findElement(By.tagName("html")).getDomAttribute("lang");   
-
-			  if (lang.contains("en")) {
-				  locationInput.sendKeys(RandomEnglishCities);
-		        } 
-			  else {
-		        	locationInput.sendKeys(RandomArabicCities);
-		        }
-		WebElement firstSuggestion = driver.findElement(By.xpath("//select[@data-testid='HotelSearchBox__ReservationSelect_Select']"));
-			  firstSuggestion.click();
+		
+		  if (driver.getCurrentUrl().contains("en")) {
+			  locationInput.sendKeys(RandomEnglishCities);
+		    } 
+		  else {
+		        locationInput.sendKeys(RandomArabicCities);
+		    }
+	  
+		// firstSuggestion
+		WebElement UnorderedList = driver.findElement(By.cssSelector(".sc-phbroq-4.gGwzVo.AutoComplete__List"));	 
+		UnorderedList.findElements(By.tagName("li")).get(1).click();
+			  
 	}
 	
-	@Test(priority = 10, enabled = false)
+	@Test(priority = 10)
 	public void selectRandomRoomOption() throws InterruptedException {
 		
 		//StaysButton();
 		
 		WebElement RoomSelectElement = driver.findElement(By.xpath("//select[@data-testid='HotelSearchBox__ReservationSelect_Select']"));
 		Select MySelect = new Select(RoomSelectElement);
-		List<WebElement> Option = MySelect.getOptions();
-		int RandomDropdownIndex = rand.nextInt(Option.size());
+		int RandomDropdownIndex = rand.nextInt(2);
 		MySelect.selectByIndex(RandomDropdownIndex);
 	}
 	
-	@Test(priority = 11, enabled = false)
+	@Test(priority = 11)
 	public void clickSearchHotelsButton() throws InterruptedException {
 		
 		//StaysButton();
@@ -133,19 +137,27 @@ public class AppTest extends TestData {
 		searchButton.click();
 	}
 	
-	@Test(priority = 12, enabled = false)
+	@Test(priority = 12)
 	public void NewPage() throws InterruptedException {
 		
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+		WebDriverWait Wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 		 
-        WebElement searchResult = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@data-testid='srp_properties_found']")));
+        WebElement SearchResult = Wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@data-testid='srp_properties_found']")));
+
+        String ResultText = SearchResult.getText();
+        System.out.println(ResultText);
  
-        String resultText = searchResult.getText();
-        System.out.println(resultText);
+        boolean ActualResult = ResultText.contains("found") || ResultText.contains("مكان");
  
-        boolean actualResult = resultText.contains("found") || resultText.contains("مكان");
- 
-        Assert.assertEquals(actualResult, ExpectedFinshingSearchHotel);
+        Assert.assertEquals(ActualResult, ExpectedFinshingSearchHotel);
+        
+     /*or
+        Get and print the readyState
+     	String pageState = (String) js.executeScript("return document.readyState");
+        System.out.println(pageState);
+        assertEquals(pageState, "complete");
+    
+     */
     }
 	
 }
