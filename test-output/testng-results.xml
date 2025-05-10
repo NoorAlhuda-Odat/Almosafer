@@ -2,60 +2,60 @@
 <testng-results ignored="0" total="12" passed="12" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-05-10T14:05:47 GMT+03:00" name="Default suite" finished-at="2025-05-10T14:06:39 GMT+03:00" duration-ms="51784">
+  <suite started-at="2025-05-10T14:53:00 GMT+03:00" name="Default suite" finished-at="2025-05-10T14:54:04 GMT+03:00" duration-ms="63820">
     <groups>
     </groups>
-    <test started-at="2025-05-10T14:05:47 GMT+03:00" name="Default test" finished-at="2025-05-10T14:06:39 GMT+03:00" duration-ms="51784">
+    <test started-at="2025-05-10T14:53:00 GMT+03:00" name="Default test" finished-at="2025-05-10T14:54:04 GMT+03:00" duration-ms="63820">
       <class name="Almosafer.Almosafer.AppTest">
-        <test-method is-config="true" signature="mySetup()[pri:0, instance:Almosafer.Almosafer.AppTest@2e554a3b]" started-at="2025-05-10T14:05:47 GMT+03:00" name="mySetup" finished-at="2025-05-10T14:05:51 GMT+03:00" duration-ms="3715" status="PASS">
+        <test-method is-config="true" signature="mySetup()[pri:0, instance:Almosafer.Almosafer.AppTest@2e554a3b]" started-at="2025-05-10T14:53:00 GMT+03:00" name="mySetup" finished-at="2025-05-10T14:53:12 GMT+03:00" duration-ms="11882" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- mySetup -->
-        <test-method signature="ChekTheDefultLanguages()[pri:1, instance:Almosafer.Almosafer.AppTest@2e554a3b]" started-at="2025-05-10T14:05:51 GMT+03:00" name="ChekTheDefultLanguages" finished-at="2025-05-10T14:05:51 GMT+03:00" duration-ms="77" status="PASS">
+        <test-method signature="ChekTheDefultLanguages()[pri:1, instance:Almosafer.Almosafer.AppTest@2e554a3b]" started-at="2025-05-10T14:53:12 GMT+03:00" name="ChekTheDefultLanguages" finished-at="2025-05-10T14:53:12 GMT+03:00" duration-ms="76" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ChekTheDefultLanguages -->
-        <test-method signature="ChekTheCurrency()[pri:2, instance:Almosafer.Almosafer.AppTest@2e554a3b]" started-at="2025-05-10T14:05:51 GMT+03:00" name="ChekTheCurrency" finished-at="2025-05-10T14:05:51 GMT+03:00" duration-ms="72" status="PASS">
+        <test-method signature="ChekTheCurrency()[pri:2, instance:Almosafer.Almosafer.AppTest@2e554a3b]" started-at="2025-05-10T14:53:12 GMT+03:00" name="ChekTheCurrency" finished-at="2025-05-10T14:53:12 GMT+03:00" duration-ms="59" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ChekTheCurrency -->
-        <test-method signature="ChekTheContactNumber()[pri:3, instance:Almosafer.Almosafer.AppTest@2e554a3b]" started-at="2025-05-10T14:05:51 GMT+03:00" name="ChekTheContactNumber" finished-at="2025-05-10T14:05:51 GMT+03:00" duration-ms="75" status="PASS">
+        <test-method signature="ChekTheContactNumber()[pri:3, instance:Almosafer.Almosafer.AppTest@2e554a3b]" started-at="2025-05-10T14:53:12 GMT+03:00" name="ChekTheContactNumber" finished-at="2025-05-10T14:53:13 GMT+03:00" duration-ms="66" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ChekTheContactNumber -->
-        <test-method signature="checkQitafLogoIsDisplayed()[pri:4, instance:Almosafer.Almosafer.AppTest@2e554a3b]" started-at="2025-05-10T14:05:51 GMT+03:00" name="checkQitafLogoIsDisplayed" finished-at="2025-05-10T14:05:51 GMT+03:00" duration-ms="137" status="PASS">
+        <test-method signature="checkQitafLogoIsDisplayed()[pri:4, instance:Almosafer.Almosafer.AppTest@2e554a3b]" started-at="2025-05-10T14:53:13 GMT+03:00" name="checkQitafLogoIsDisplayed" finished-at="2025-05-10T14:53:13 GMT+03:00" duration-ms="137" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkQitafLogoIsDisplayed -->
-        <test-method signature="verifyHotelsTabIsNotSelected()[pri:5, instance:Almosafer.Almosafer.AppTest@2e554a3b]" started-at="2025-05-10T14:05:51 GMT+03:00" name="verifyHotelsTabIsNotSelected" finished-at="2025-05-10T14:05:52 GMT+03:00" duration-ms="47" status="PASS">
+        <test-method signature="verifyHotelsTabIsNotSelected()[pri:5, instance:Almosafer.Almosafer.AppTest@2e554a3b]" started-at="2025-05-10T14:53:13 GMT+03:00" name="verifyHotelsTabIsNotSelected" finished-at="2025-05-10T14:53:13 GMT+03:00" duration-ms="54" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyHotelsTabIsNotSelected -->
-        <test-method signature="verifyDefaultDepartureDate()[pri:6, instance:Almosafer.Almosafer.AppTest@2e554a3b]" started-at="2025-05-10T14:05:52 GMT+03:00" name="verifyDefaultDepartureDate" finished-at="2025-05-10T14:05:52 GMT+03:00" duration-ms="275" status="PASS">
+        <test-method signature="verifyDefaultDepartureDate()[pri:6, instance:Almosafer.Almosafer.AppTest@2e554a3b]" started-at="2025-05-10T14:53:13 GMT+03:00" name="verifyDefaultDepartureDate" finished-at="2025-05-10T14:53:13 GMT+03:00" duration-ms="54" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyDefaultDepartureDate -->
-        <test-method signature="verifyDefaultReturnDate()[pri:7, instance:Almosafer.Almosafer.AppTest@2e554a3b]" started-at="2025-05-10T14:05:52 GMT+03:00" name="verifyDefaultReturnDate" finished-at="2025-05-10T14:05:52 GMT+03:00" duration-ms="45" status="PASS">
+        <test-method signature="verifyDefaultReturnDate()[pri:7, instance:Almosafer.Almosafer.AppTest@2e554a3b]" started-at="2025-05-10T14:53:13 GMT+03:00" name="verifyDefaultReturnDate" finished-at="2025-05-10T14:53:13 GMT+03:00" duration-ms="49" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyDefaultReturnDate -->
-        <test-method signature="RandomlyChangeTheLanguage()[pri:8, instance:Almosafer.Almosafer.AppTest@2e554a3b]" started-at="2025-05-10T14:05:52 GMT+03:00" name="RandomlyChangeTheLanguage" finished-at="2025-05-10T14:05:53 GMT+03:00" duration-ms="1367" status="PASS">
+        <test-method signature="RandomlyChangeTheLanguage()[pri:8, instance:Almosafer.Almosafer.AppTest@2e554a3b]" started-at="2025-05-10T14:53:13 GMT+03:00" name="RandomlyChangeTheLanguage" finished-at="2025-05-10T14:53:16 GMT+03:00" duration-ms="3521" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- RandomlyChangeTheLanguage -->
-        <test-method signature="clickCities()[pri:9, instance:Almosafer.Almosafer.AppTest@2e554a3b]" started-at="2025-05-10T14:05:53 GMT+03:00" name="clickCities" finished-at="2025-05-10T14:05:56 GMT+03:00" duration-ms="2388" status="PASS">
+        <test-method signature="clickCities()[pri:9, instance:Almosafer.Almosafer.AppTest@2e554a3b]" started-at="2025-05-10T14:53:16 GMT+03:00" name="clickCities" finished-at="2025-05-10T14:53:18 GMT+03:00" duration-ms="1452" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- clickCities -->
-        <test-method signature="selectRandomRoomOption()[pri:10, instance:Almosafer.Almosafer.AppTest@2e554a3b]" started-at="2025-05-10T14:05:56 GMT+03:00" name="selectRandomRoomOption" finished-at="2025-05-10T14:05:56 GMT+03:00" duration-ms="196" status="PASS">
+        <test-method signature="selectRandomRoomOption()[pri:10, instance:Almosafer.Almosafer.AppTest@2e554a3b]" started-at="2025-05-10T14:53:18 GMT+03:00" name="selectRandomRoomOption" finished-at="2025-05-10T14:53:18 GMT+03:00" duration-ms="174" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- selectRandomRoomOption -->
-        <test-method signature="clickSearchHotelsButton()[pri:11, instance:Almosafer.Almosafer.AppTest@2e554a3b]" started-at="2025-05-10T14:05:56 GMT+03:00" name="clickSearchHotelsButton" finished-at="2025-05-10T14:06:39 GMT+03:00" duration-ms="42983" status="PASS">
+        <test-method signature="clickSearchHotelsButton()[pri:11, instance:Almosafer.Almosafer.AppTest@2e554a3b]" started-at="2025-05-10T14:53:18 GMT+03:00" name="clickSearchHotelsButton" finished-at="2025-05-10T14:54:04 GMT+03:00" duration-ms="45960" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- clickSearchHotelsButton -->
-        <test-method signature="NewPage()[pri:12, instance:Almosafer.Almosafer.AppTest@2e554a3b]" started-at="2025-05-10T14:06:39 GMT+03:00" name="NewPage" finished-at="2025-05-10T14:06:39 GMT+03:00" duration-ms="265" status="PASS">
+        <test-method signature="NewPage()[pri:12, instance:Almosafer.Almosafer.AppTest@2e554a3b]" started-at="2025-05-10T14:54:04 GMT+03:00" name="NewPage" finished-at="2025-05-10T14:54:04 GMT+03:00" duration-ms="201" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- NewPage -->
